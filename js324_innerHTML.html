@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML</title>
+	<style>
+		* {
+			margin: 10px;
+
+		}
+		#capa1, #capa2 {
+			background-color:green;
+			width:400px; 
+			height:200px; 
+			text-align:center;
+			color: white;
+		}
+		#capa2 {
+			background-color:blue;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			//activar un listener sobre todo el documento
+			document.getElementById('capa1').addEventListener('click', function () {onclickf(this)});
+			document.getElementById('capa2').addEventListener('dblclick', function () {ondblclickf(this)});
+		}		
+
+		function onclickf(event) {
+			document.getElementById("capa2").innerHTML+= "<br>click sobre la capa 1"; 
+		}
+		function ondblclickf(event) {
+			document.getElementById("capa1").innerHTML+= "<br>Doble click sobre la capa 2"; 
+		}
+				
+	</script>
+</head>
+	<body>
+		<main>
+			<div id="capa1" >capa 1</div>
+			<div id="capa2" >capa 2</div>
+		</main>
+	</body>
+</html>
